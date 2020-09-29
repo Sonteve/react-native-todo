@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {Text, View, ScrollView, Button} from 'react-native';
+import {Text, View, ScrollView, Button, SafeAreaView} from 'react-native';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import rootReducer from './modules';

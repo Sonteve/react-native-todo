@@ -69,6 +69,14 @@ const todo = createReducer<TodoState, TodoActions>(initialState, {
           : {...todo, isEdit: false},
       );
     }),
+  [MODIFY_TODO]: (state, action) =>
+    produce(state, (draft) => {
+      const index = draft.todos.findIndex(
+        (todo) => todo.id === action.payload.id,
+      );
+      draft.todos[index].todo = action.payload.todo;
+      draft.todos[index].isEdit = false;
+    }),
 });
 
 export default todo;
